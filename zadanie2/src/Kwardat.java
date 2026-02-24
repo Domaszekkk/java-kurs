@@ -12,7 +12,11 @@ public class Kwardat {
 
         for (int i = 0; i < wysokosc; i++) {
             for (int j = 0; j < szerokosc; j++) {
-                System.out.print("*");
+                if (i == 0 || i == wysokosc - 1 || j == 0 || j == szerokosc - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
             }
             System.out.println();
         }
