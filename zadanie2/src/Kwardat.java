@@ -23,5 +23,3 @@ public class Kwardat {
         scanner.close();
     }
 }
-
-
