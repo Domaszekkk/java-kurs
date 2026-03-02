@@ -1,5 +1,5 @@
 public class Motorcycle extends Vehicle implements Drivable {
-    private double fuelConsumption;
+    private final double fuelConsumption;
 
     public Motorcycle(String brand, String model, int year, FuelType fuelType, double tankCapacity, double fuelConsumption) {
         super(brand, model, year, fuelType, tankCapacity);
@@ -14,6 +14,11 @@ public class Motorcycle extends Vehicle implements Drivable {
         } else {
             System.out.println("Brak paliwa");
         }
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(this);
     }
 
     @Override

@@ -25,9 +25,7 @@ public abstract class Vehicle {
         }
     }
 
-    public void displayInfo() {
-        System.out.println(toString());
-    }
+    public abstract void displayInfo();
 
     @Override
     public abstract String toString();

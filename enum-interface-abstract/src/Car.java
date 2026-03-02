@@ -1,6 +1,6 @@
 public class Car extends Vehicle implements Drivable {
-    private int doors;
-    private double fuelConsumption;
+    private final int doors;
+    private final double fuelConsumption;
 
     public Car(String brand, String model, int year, FuelType fuelType, double tankCapacity, int doors, double fuelConsumption) {
         super(brand, model, year, fuelType, tankCapacity);
@@ -16,6 +16,11 @@ public class Car extends Vehicle implements Drivable {
         } else {
             System.out.println("zbyt mało paliwa");
         }
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(this);
     }
 
     @Override
