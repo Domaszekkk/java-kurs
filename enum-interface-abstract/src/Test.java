@@ -9,28 +9,27 @@ public class Test {
         List<Drivable> vehicles = new ArrayList<>(List.of(car2, car, moto));
         List<Vehicle> vehicles1 = new ArrayList<>(List.of(car2, car, moto));
 
+        System.out.println("pojazdy");
         for (Vehicle c : vehicles1) {
             c.displayInfo();
         }
+        System.out.println();
 
+        System.out.println("tankowanie ");
+        for (Vehicle b : vehicles1) {
+            b.refuel(20);
+        }
+        System.out.println();
+
+        System.out.println("jazda ");
         for (Drivable v : vehicles) {
             v.drive(100);
         }
+        System.out.println();
 
-//        car.displayInfo();
-//        car.refuel(60);
-//        ((Drivable) car).drive(100);
-//
-//        System.out.println();
-//
-//        moto.displayInfo();
-//        moto.refuel(5);
-//        ((Drivable) moto).drive(100);
-//
-//        System.out.println();
-//
-//        car2.displayInfo();
-//        car2.refuel(50);
-//        ((Drivable)car2).drive(400);
+        System.out.println("koniec jazdy ");
+        for (Vehicle c : vehicles1) {
+            c.displayInfo();
+        }
     }
 }
