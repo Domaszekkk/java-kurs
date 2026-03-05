@@ -36,6 +36,10 @@ public class Stack {
 
     public void remove(int value) {
 
+        if (head == null) {
+            return;
+        }
+
         if (head.getValue() == value) {
             head = head.getNext();
             size--;
