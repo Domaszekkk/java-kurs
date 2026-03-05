@@ -1,0 +1,22 @@
+public class Node {
+    private final int value;
+    private Node next;
+
+    public Node(Node next, int value) {
+        this.next = next;
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
+
+}
