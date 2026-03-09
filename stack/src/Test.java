@@ -19,6 +19,12 @@ public class Test {
 
         Stack<Triple<String, Integer, Pair<String, Integer>>> stack3 = new Stack<>();
         stack3.push(new Triple<>("wartosc3", 7, new Pair<>("arka gdynia", 69)));
+
+        Pair<String, Integer> pair2 = new Pair<>("wartosc4", 67);
+        Triple<String, Integer, Pair<String, Integer>> triple2 = new Triple<>("wartosc5", 2137, pair2);
+        stack3.push(triple2);
         System.out.println(stack3.pop().pair());
+        System.out.println(stack3.pop());
+        System.out.println(stack3.pop());
     }
 }

@@ -19,4 +19,3 @@ public class Node <T>{
         this.next = next;
     }
 }
-//przerobić stack na generyki stworzyc jeden ze Stringami a drugi z jakimś swoim typem(record)

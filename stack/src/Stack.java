@@ -8,6 +8,9 @@ public class Stack<T> {
     }
 
     public T pop() {
+        if (head == null) {
+           return null;
+        }
         T value = head.getValue();
         head = head.getNext();
         size--;
