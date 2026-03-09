@@ -1,22 +1,22 @@
-public class Stack {
-    private Node head;
+public class Stack<T> {
+    private Node<T> head;
     private int size;
 
-    void push(int value) {
-        head = new Node(head, value);
+    public void push(T value) {
+        head = new Node<>(head, value);
         size++;
     }
 
-    int pop() {
-        int value = head.getValue();
+    public T pop() {
+        T value = head.getValue();
         head = head.getNext();
         size--;
         return value;
     }
 
-    public void addFirst(int value) {
+    public void addFirst(T value) {
 
-        Node newNode = new Node(null, value);
+        Node<T> newNode = new Node<>(null, value);
 
         if (head == null) {
             head = newNode;
@@ -24,7 +24,7 @@ public class Stack {
             return;
         }
 
-        Node temp = head;
+        Node<T> temp = head;
 
         while (temp.getNext() != null) {
             temp = temp.getNext();
@@ -34,7 +34,7 @@ public class Stack {
         size++;
     }
 
-    public void remove(int value) {
+    public void remove(T value) {
 
         if (head == null) {
             return;
@@ -46,7 +46,7 @@ public class Stack {
             return;
         }
 
-        Node temp = head;
+        Node<T> temp = head;
 
         while (temp.getNext() != null) {
 

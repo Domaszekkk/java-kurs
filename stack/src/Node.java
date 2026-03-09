@@ -1,22 +1,22 @@
-public class Node {
-    private final int value;
-    private Node next;
+public class Node <T>{
+    private final T value;
+    private Node <T> next;
 
-    public Node(Node next, int value) {
+    public Node(Node<T> next, T value) {
         this.next = next;
         this.value = value;
     }
 
-    public int getValue() {
+    public T getValue() {
         return value;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<T> next) {
         this.next = next;
     }
-
 }
+//przerobić stack na generyki stworzyc jeden ze Stringami a drugi z jakimś swoim typem(record)
