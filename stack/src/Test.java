@@ -2,20 +2,29 @@ public class Test {
 
     public static void main(String[] args) {
 
-        Stack stack = new Stack();
+        Stack <String> stack = new Stack<>();
 
-        stack.push(1);
-        stack.push(2);
-        stack.addFirst(5);
-        stack.addFirst(8);
-
-        System.out.println(stack.size());
-        System.out.println();
-        stack.remove(5);
+        stack.push("1");
+        stack.push("2");
 
         System.out.println(stack.pop());
         System.out.println(stack.pop());
-        System.out.println();
-        System.out.println(stack.size());
+
+        Stack <Pair<String, Integer>> stack2 = new Stack<>();
+
+        stack2.push(new Pair<>("wartosc", 5));
+        stack2.push(new Pair<>("wartosc2", 6));
+        System.out.println(stack2.pop());
+        System.out.println(stack2.pop());
+
+        Stack<Triple<String, Integer, Pair<String, Integer>>> stack3 = new Stack<>();
+        stack3.push(new Triple<>("wartosc3", 7, new Pair<>("arka gdynia", 69)));
+
+        Pair<String, Integer> pair2 = new Pair<>("wartosc4", 67);
+        Triple<String, Integer, Pair<String, Integer>> triple2 = new Triple<>("wartosc5", 2137, pair2);
+        stack3.push(triple2);
+        System.out.println(stack3.pop().pair());
+        System.out.println(stack3.pop());
+        System.out.println(stack3.pop());
     }
 }
