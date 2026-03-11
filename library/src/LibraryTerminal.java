@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class LibraryTerminal {
-    private LibraryService library;
-    private Scanner scanner;
+    private final LibraryService library;
+    private final Scanner scanner;
 
     public LibraryTerminal(LibraryService library) {
         this.library = library;
