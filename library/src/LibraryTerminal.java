@@ -44,12 +44,14 @@ public class LibraryTerminal {
 
     private void showMenu() {
         System.out.println();
-        System.out.println("1.show avaiable items");
-        System.out.println("2.show borrowed items");
-        System.out.println("3.borrow item");
-        System.out.println("4.return item");
-        System.out.println("5.number of books and movies");
-        System.out.println("6.exit");
+        System.out.print("""
+                1.show available items
+                2.show borrowed items
+                3.borrow item
+                4.return item
+                5.number of books and movies
+                6.exit
+                """);
     }
 
     private void showAvailable() {

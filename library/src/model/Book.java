@@ -15,6 +15,7 @@ public class Book extends LibraryItem {
      public static int getCount() {
         return count;
      }
+
      @Override
     public String getDescription() {
         return String.format("book - title: %s, author: %s, pages: %d", title, author, pages);

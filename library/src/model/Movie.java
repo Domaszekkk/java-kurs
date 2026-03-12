@@ -15,6 +15,7 @@ public class Movie extends LibraryItem {
     public static int getCount() {
         return count;
     }
+
     @Override
     public String getDescription() {
         return String.format("movie - title: %s, director: %s duartion: %d", title, director, duration);
