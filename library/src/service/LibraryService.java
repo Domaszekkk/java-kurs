@@ -6,6 +6,7 @@ import model.LibraryItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class LibraryService {
     private final List<LibraryItem> items = new ArrayList<>();
@@ -38,46 +39,22 @@ public class LibraryService {
         return borrowed;
     }
 
-    public LibraryItem findItemByTitle(String title) {
+    public Optional <LibraryItem> findItemByTitle(String title) {
         for (LibraryItem item : items) {
             if (item.getTitle().equalsIgnoreCase(title)) {
-                return item;
+                return Optional.of(item);
             }
         }
-        throw new ItemNotFoundException("title not found: " + title);
+        return Optional.empty();
     }
 
     public void borrowItem(String title) {
-        LibraryItem item = findItemByTitle(title);
+        LibraryItem item = findItemByTitle(title).orElseThrow(() -> new ItemNotFoundException("item not found; " + title));
         item.borrow();
     }
 
     public void returnItem(String title) throws AlreadyReturnedException {
-        LibraryItem item = findItemByTitle(title);
+        LibraryItem item = findItemByTitle(title).orElseThrow(() -> new ItemNotFoundException ("item not found: " + title));
         item.returnItem();
     }
 }
-
-
-//Stwórz program w Javie, który umożliwia zarządzanie biblioteką za pomocą interaktywnego menu w terminalu.
-// Program powinien obsługiwać książki i filmy, pozwalając użytkownikowi na przeglądanie, wypożyczanie oraz zwracanie elementów.
-//Wymagania funkcjonalne:
-//
-//Elementy biblioteki:
-//Książka (model.Book): zawiera tytuł, autora i liczbę stron.
-//Film (model.Movie): zawiera tytuł, reżysera i czas trwania w minutach.
-//ps chcemy stworzyć abstrakcje nad tymi elementami np model.LibraryItem by móc zastosować polimorfizm
-//
-//Interfejs użytkownika:
-//Wyświetlanie listy dostępnych i wypożyczonych elementów.
-//Wypożyczanie elementu po tytule.
-//Zwracanie elementu po tytule.
-//Wyświetlanie liczby książek i filmów w systemie.
-//Wyjście z programu.
-//
-//Obsługa wyjątków:
-//Rzucaj wyjątki w przypadku błędów, np. element nie istnieje lub jest już wypożyczony.
-// albo juz został zwrócony 3 wyjatki 2 unchecked i checked z łapaniem w odpowiednim miejscu i komunikatem dla użytkownika
-//
-//Dodatkowe wymagania:
-//Każdy typ elementu (książki i filmy) powinien mieć statyczny licznik obiektów.
