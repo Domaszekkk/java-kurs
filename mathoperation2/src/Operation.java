@@ -12,16 +12,19 @@ public enum Operation {
 
     private final String symbol;
     private final MathOperation operation;
-    Operation(String symbol, MathOperation operation) {
+
+    private Operation(String symbol, MathOperation operation) {
         this.symbol = symbol;
         this.operation = operation;
     }
 
     public int apply(int a, int b) {
+
         return operation.apply(a, b);
     }
 
     public String getSymbol() {
+
         return symbol;
     }
 
