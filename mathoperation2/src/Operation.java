@@ -23,11 +23,6 @@ public enum Operation {
         return operation.apply(a, b);
     }
 
-    public String getSymbol() {
-
-        return symbol;
-    }
-
     public static Operation fromSymbol(String symbol) {
         for (Operation op : Operation.values()) {
             if (op.symbol.equals(symbol)) {
