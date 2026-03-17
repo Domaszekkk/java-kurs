@@ -19,33 +19,16 @@ public class LibraryService {
         return items;
     }
 
-    public List<LibraryItem> showAvailableItems() {
-        List<LibraryItem> available = new ArrayList<>();
-        for (LibraryItem item : items) {
-            if (!item.isBorrowed()) {
-                available.add(item);
-            }
-        }
-        return available;
+    public List<LibraryItem> listItems(boolean borrowed) {
+        return items.stream()
+                .filter(item -> item.isBorrowed() == borrowed)
+                .toList();
     }
 
-    public List<LibraryItem> showBorrowedItems() {
-        List<LibraryItem> borrowed = new ArrayList<>();
-        for (LibraryItem item : items) {
-            if (item.isBorrowed()) {
-                borrowed.add(item);
-            }
-        }
-        return borrowed;
-    }
-
-    public Optional <LibraryItem> findItemByTitle(String title) {
-        for (LibraryItem item : items) {
-            if (item.getTitle().equalsIgnoreCase(title)) {
-                return Optional.of(item);
-            }
-        }
-        return Optional.empty();
+    public Optional<LibraryItem> findItemByTitle(String title) {
+        return items.stream()
+                .filter(item -> item.getTitle().equalsIgnoreCase(title))
+                .findFirst();
     }
 
     public void borrowItem(String title) {
@@ -54,7 +37,7 @@ public class LibraryService {
     }
 
     public void returnItem(String title) throws AlreadyReturnedException {
-        LibraryItem item = findItemByTitle(title).orElseThrow(() -> new ItemNotFoundException ("item not found: " + title));
+        LibraryItem item = findItemByTitle(title).orElseThrow(() -> new ItemNotFoundException("item not found: " + title));
         item.returnItem();
     }
 }
