@@ -1,5 +1,5 @@
 public class Test {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         Osoba[] znajomi = {
                 new Osoba("Jan", "Kowalski", "123-456-789"),
@@ -27,21 +27,21 @@ public class Test {
                 "gww-ewe-wew"
         };
 
-        for (Telefon t : telefony) {
+        for (Telefon telefon : telefony) {
             System.out.println("nowy hendi");
 
             for (String numer : numery) {
                 try {
-                    t.zadzwon(numer);
+                    telefon.zadzwon(numer);
                 } catch (WrongNumberFormatException | CallersHistoryIsFullException e) {
                     System.out.println(e.getMessage());
                 }
             }
         }
 
-        for (Telefon t : telefony) {
+        for (Telefon telefon : telefony) {
             System.out.println("historia połączeń");
-            t.wyswietlHistoriePolonczen();
+            telefon.wyswietlHistoriePolonczen();
         }
     }
 }
