@@ -18,7 +18,7 @@ public class Komorka extends Telefon {
         for (int i = 0; i < index; i++) {
             System.out.println(historia[i]);
         }
-        if(index == 0) {
+        if (index == 0) {
             System.out.println("brak historii ");
         }
     }

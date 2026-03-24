@@ -5,6 +5,7 @@ public class Telefon {
             throw new WrongNumberFormatException("zły format numeru");
         System.out.println("dzwonie na: " + numer);
     }
+
     public void wyswietlHistoriePolonczen() {
         System.out.println("brak historii ");
     }

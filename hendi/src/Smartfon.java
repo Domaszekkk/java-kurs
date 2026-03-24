@@ -14,6 +14,7 @@ public class Smartfon extends Komorka {
                     .map(number -> formatNumber(number))
                     .forEach(formatNumber -> System.out.println(formatNumber));
         }
+
     private String formatNumber(String number) {
         return Arrays.stream(znajomi)
                 .filter(osoba -> osoba != null && osoba.getNumer().equals(number))
