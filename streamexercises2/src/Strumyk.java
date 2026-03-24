@@ -13,5 +13,4 @@ public class Strumyk {
         }
         return result;
     }
-
 }
