@@ -36,7 +36,7 @@ public class LibraryTerminal {
                     case 6 -> running = false;
                     default -> System.out.println("inappropriate option mordeczko");
                 }
-            } catch (AlreadyReturnedException | AlreadyBorrowedException | ItemNotFoundException e ) {
+            } catch (AlreadyReturnedException | AlreadyBorrowedException | ItemNotFoundException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -55,14 +55,14 @@ public class LibraryTerminal {
     }
 
     private void showAvailable() {
-        List<LibraryItem> items = library.showAvailableItems();
+        List<LibraryItem> items = library.listItems(false);
         for (LibraryItem item : items) {
             System.out.printf("%s%n", item.getDescription());
         }
     }
 
     private void showBorrowed() {
-        List<LibraryItem> items = library.showBorrowedItems();
+        List<LibraryItem> items = library.listItems(true);
         for (LibraryItem item : items) {
             System.out.printf("%s%n", item.getDescription());
         }
