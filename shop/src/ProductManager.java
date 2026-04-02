@@ -23,7 +23,7 @@ public class ProductManager {
 
     void displayProducts() {
         for (Product p : products) {
-            System.out.printf("ID: %s NAME: %s PRICE: %.2f%n",
+            System.out.printf("id: %s name: %s price: %s%n",
                     p.getId(),
                     p.getName(),
                     p.getBasePrice());
