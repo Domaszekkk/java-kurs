@@ -1,9 +1,11 @@
+import java.math.BigDecimal;
+
 public class Configuration {
     private final ConfigurationType type;
     private final String name;
-    private final double price;
+    private final BigDecimal price;
 
-    public Configuration(ConfigurationType type, String name, double price) {
+    public Configuration(ConfigurationType type, String name, BigDecimal price) {
         this.type = type;
         this.name = name;
         this.price = price;
@@ -17,7 +19,7 @@ public class Configuration {
         return name;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 }

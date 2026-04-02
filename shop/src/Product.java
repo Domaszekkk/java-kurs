@@ -1,17 +1,18 @@
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Product {
     private final String id;
     private final String name;
     private final ProductType productType;
-    private final double basePrice;
+    private final BigDecimal basePrice;
     private final List<Configuration> availableConfigurations;
     private final long quantity;
 
     public Product(String id,
                    String name,
                    ProductType productType,
-                   double basePrice,
+                   BigDecimal basePrice,
                    List<Configuration> availableConfigurations,
                    long quantity) {
         this.id = id;
@@ -34,7 +35,7 @@ public class Product {
         return productType;
     }
 
-    public double getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 
