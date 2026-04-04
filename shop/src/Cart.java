@@ -18,4 +18,7 @@ public class Cart {
         });
     }
 
+    public List<CartItem> getItems() {
+        return items;
+    }
 }

@@ -19,7 +19,7 @@ public class CartItem {
         return quantity;
     }
 
-    public List<Configuration> getChosenConfiguration() {
+    public List<Configuration> getChosenConfigurations() {
         return chosenConfigurations;
     }
 }
