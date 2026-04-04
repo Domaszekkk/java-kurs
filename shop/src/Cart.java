@@ -21,4 +21,7 @@ public class Cart {
     public List<CartItem> getItems() {
         return items;
     }
+   public Order placeOrder(OrderProcessor processor) {
+        return processor.createOrder(this);
+   }
 }
